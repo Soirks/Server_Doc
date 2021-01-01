@@ -1,4 +1,37 @@
+## LAND
+`/land a/b/exit` ("/"为"或"的意思)  
+`/land a` 为进入选点a模式，此时点地选点a  
+`/land b` 为进入选点b模式，此时点地选点b  
+选完两个点就可以输入`/land buy`，退出选点请输入`/land exit`  
+
+`/land buy/sell/info/gui`  
+`buy` 购买  
+`sell` 卖出你脚下的领地  
+`info` 查询脚下领地信息  
+`gui` 领地gui  
+
+`/land trust/untrust/give`</br>
+`/land trust <玩家名>` 信任玩家，玩家拥有除更改被信任人和出售领地以外的所有权限</br>
+`/land untrust <玩家名>` 取消信任玩家</br>
+`/land give <玩家名>` 转让领地主人权限(目标玩家必须在线)</br>
+`/land perm <数字>` 更改脚下领地权限掩码
+
+0: NOTHING 无权限(默认)</br>
+1: PERM_INTERWITHACTOR 和生物互动，比如喂食，骑马，让宠物坐下</br>
+2: PERM_USE 空手点击</br>
+4: PERM_ATK 攻击实体</br>
+8: PERM_BUILD 建造</br>
+16: PERM_DESTROY 破坏
+
+默认的land perm为0，表示陌生人没有被授予任何默认权限</br>
+如果想给陌生人权限，请更改perm值，perm值为权限值之和</br>
+例如: 允许领地内陌生人攻击实体和空手点击</br>
+根据land perm计算得出: 2(空手点击)+4(攻击实体)=6</br>
+则输入: `/land perm 6`
+
+注: *OP拥有所有领地的所有权限，同时OP买领地不扣钱*
 ## TPA
+### 以下内容均可在菜单中使用，无需背记
 `/tpa <to/here> <player>` 向目标玩家发起传送请求，其中`to`为传送到目标玩家位置，`here`为将目标玩家传送到你的位置    
 `/tpa gui` 打开GUI  
 `/tpa ac/de/cancel/toggle`  
@@ -46,36 +79,4 @@
 `/money_op pay/set/add/reduce`
 
 <u>注意:`/money_op reduce`存在返回状态，可以联动链命令方块使用</u>
-## LAND
-`/land a/b/exit` ("/"为"或"的意思)  
-`/land a` 为进入选点a模式，此时点地选点a  
-`/land b` 为进入选点b模式，此时点地选点b  
-选完两个点就可以输入`/land buy`，退出选点请输入`/land exit`  
-
-`/land buy/sell/info/gui`  
-`buy` 购买  
-`sell` 卖出你脚下的领地  
-`info` 查询脚下领地信息  
-`gui` 领地gui  
-
-`/land trust/untrust/give`</br>
-`/land trust <玩家名>` 信任玩家，玩家拥有除更改被信任人和出售领地以外的所有权限</br>
-`/land untrust <玩家名>` 取消信任玩家</br>
-`/land give <玩家名>` 转让领地主人权限(目标玩家必须在线)</br>
-`/land perm <数字>` 更改脚下领地权限掩码
-
-0: NOTHING 无权限(默认)</br>
-1: PERM_INTERWITHACTOR 和生物互动，比如喂食，骑马，让宠物坐下</br>
-2: PERM_USE 空手点击</br>
-4: PERM_ATK 攻击实体</br>
-8: PERM_BUILD 建造</br>
-16: PERM_DESTROY 破坏
-
-默认的land perm为0，表示陌生人没有被授予任何默认权限</br>
-如果想给陌生人权限，请更改perm值，perm值为权限值之和</br>
-例如: 允许领地内陌生人攻击实体和空手点击</br>
-根据land perm计算得出: 2(空手点击)+4(攻击实体)=6</br>
-则输入: `/land perm 6`
-
-注: *OP拥有所有领地的所有权限，同时OP买领地不扣钱*
 
