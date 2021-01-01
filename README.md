@@ -76,3 +76,4 @@ pay/set/add/reduce /money pay <玩家名> <数目> 向指定玩家转账若干�
 /money_op pay/set/add/reduce
 
 注意:/money_op reduce存在返回状态，可以联动链命令方块使用
+4
